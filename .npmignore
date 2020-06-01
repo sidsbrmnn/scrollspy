@@ -1,0 +1,7 @@
+node_modules/
+.editorconfig
+.eslintrc.json
+.prettierignore
+.prettierrc
+.travis.yml
+webpack.config.js
