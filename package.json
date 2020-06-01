@@ -1,6 +1,6 @@
 {
   "name": "@sidsbrmnn/scrollspy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple lightweight JavaScript library without jQuery or any other dependencies to handle scroll spying on static webpages.",
   "main": "src/index.js",
   "dependencies": {},
