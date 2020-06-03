@@ -46,23 +46,23 @@ If you are giving it a try, make sure that you:
 
 2. The `options` is optional. It is type of `object` which contains properties below:
 
-| Name               | Type     | Default       | Description                        |
-|--------------------|:---------|:--------------|:-----------------------------------|
-| `sectionSelector`     | string   | `section`  | Query selector to your sections    |
-| `targetSelector` | string   | `a`      | Element will be added active class |
-| `offset`           | Number   | 0             | Offset number                      |
+| Name               | Type     | Default       | Description                                              |
+|--------------------|:---------|:--------------|:---------------------------------------------------------|
+| `sectionSelector`  | string   | `section`     | Query selector to your sections                          |
+| `targetSelector`   | string   | `a`           | Element will be added active class                       |
+| `offset`           | Number   | 0             | Offset number                                            |
 | `hrefAttribute`    | string   | `href`        | The menu item's attribute name which contains section ID |
-| `activeClass`      | string   | `active`      | Active class name will be added into `targetSelector`|
+| `activeClass`      | string   | `active`      | Active class name will be added into `targetSelector`    |
 
 ### ES6
 
 ```js
-import scrollSpy from 'simple-scrollspy'
+import scrollSpy from '@sidsbrmnn/scrollspy'
 
 const options = {
-    sectionSelector: 'section',     // Query selector to your sections
+    sectionSelector: 'section',  // Query selector to your sections
     targetSelector: '.nav-link', // Query selector to your elements that will be added `active` class
-    offset: 100                     // Menu item will active before scroll to a matched section 100px
+    offset: 100                  // Menu item will active before scroll to a matched section 100px
 }
 
 // Initialize
@@ -75,7 +75,7 @@ scrollSpy('#navMain', options)
 ### Script tag
 
 ```html
-<script src="/path/to/dist/simple-scrollspy.min.js"></script>
+<script src="/path/to/dist/scrollspy.min.js"></script>
 <script>
     window.onload = function () {
         scrollSpy('#navMain', {
@@ -84,6 +84,7 @@ scrollSpy('#navMain', options)
             offset: 100,
         });
     }
+
 </script>
 ```
 
