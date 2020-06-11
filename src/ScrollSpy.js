@@ -107,7 +107,10 @@ class ScrollSpy {
     setActive(menuItem) {
         const isActive = menuItem.classList.contains(this.options.activeClass);
         if (!isActive) {
-            menuItem.classList.add(this.options.activeClass);
+            const activeClasses = this.options.activeClass.trim().split(' ');
+            activeClasses.forEach((activeClass) =>
+                menuItem.classList.add(activeClass)
+            );
         }
     }
 
@@ -128,9 +131,12 @@ class ScrollSpy {
             )}"])`
         );
 
-        menuItems.forEach((item) =>
-            item.classList.remove(this.options.activeClass)
-        );
+        menuItems.forEach((item) => {
+            const activeClasses = this.options.activeClass.trim().split(' ');
+            activeClasses.forEach((activeClass) =>
+                item.classList.remove(activeClass)
+            );
+        });
     }
 }
 
