@@ -79,9 +79,9 @@ scrollSpy('#navMain', options)
 <script>
     window.onload = function () {
         scrollSpy('#navMain', {
-            sectionClass: 'section',
-            menuActiveTarget: '.nav-link',
-            offset: 100,
+            sectionSelector: 'section',
+            targetSelector: '.nav-link',
+            offset: 100
         });
     }
 
