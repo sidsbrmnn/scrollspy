@@ -126,7 +126,7 @@ class ScrollSpy {
     removeCurrentActive(options = { ignore: null }) {
         const { hrefAttribute, targetSelector } = this.options;
         const menuItems = this.menuList.querySelectorAll(
-            `${targetSelector}.active:not([${hrefAttribute}="${options.ignore.getAttribute(
+            `${targetSelector}:not([${hrefAttribute}="${options.ignore.getAttribute(
                 hrefAttribute
             )}"])`
         );
