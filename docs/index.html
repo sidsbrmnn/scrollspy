@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollspy Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.4.6/dist/tailwind.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y proximity;
+            /* Reserve space for header */
+            scroll-padding-top: 120px;
+        }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+</head>
+
+<body class="font-sans antialiased">
+    <div class="md:relative">
+        <div class="md:w-1/4 z-50 md:h-auto sticky inset-x-0 top-0 shadow md:shadow-none md:fixed md:inset-y-0 md:left-0 bg-gray-800"
+            x-data="{ open: false }">
+            <div class="h-16 px-4 bg-gray-900 flex items-center justify-between md:justify-center">
+                <span class="text-gray-100 lg:text-lg font-semibold">
+                    @sidsbrmnn/scrollspy
+                </span>
+                <button
+                    class="md:hidden inline-flex p-2 text-gray-600 hover:text-gray-100 hover:bg-gray-700 focus:text-gray-100 focus:bg-gray-700 rounded focus:outline-none items-center justify-center"
+                    @click="open = !open">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" clip-rule="evenodd" x-show="!open"
+                            d="M3 7a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 13a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" x-show="open"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="hidden md:block md:flex md:flex-col text-gray-600 p-2">
+                <a href="#home"
+                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100 text-gray-100 bg-gray-900 shadow-inner">Home</a>
+                <a href="#about"
+                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">About</a>
+                <a href="#features"
+                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Features</a>
+                <a href="#contact"
+                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Contact</a>
+            </nav>
+            <nav class="md:hidden flex flex-col text-gray-600 p-2" x-show="open">
+                <a href="#home"
+                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100 text-gray-100 bg-gray-900 shadow-inner">Home</a>
+                <a href="#about"
+                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">About</a>
+                <a href="#features"
+                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Features</a>
+                <a href="#contact"
+                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Contact</a>
+            </nav>
+        </div>
+        <div class="md:w-3/4 md:ml-auto">
+            <main>
+                <section class="bg-gray-200" id="home">
+                    <div class="w-full max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16">
+                        <h2
+                            class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate mb-8">
+                            Home
+                        </h2>
+                        <p class="md:text-lg text-gray-600">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Error ex quis exercitationem
+                            earum commodi at soluta doloribus dignissimos
+                            explicabo sunt molestias totam, illum fugit qui,
+                            cupiditate distinctio obcaecati est ipsa aliquid
+                            autem dicta corporis magni? Error itaque
+                            aspernatur, earum exercitationem nihil animi
+                            accusamus nostrum magni doloribus qui odio, quae
+                            dolor eveniet praesentium nisi? Dolores
+                            cupiditate ex voluptatibus autem eius ad fugiat
+                            maiores non accusantium! Consectetur doloribus,
+                            perspiciatis sit vero provident, similique hic
+                            quibusdam, molestiae eos maxime numquam
+                            laboriosam deleniti exercitationem accusantium
+                            aliquam ullam. Aspernatur inventore cumque
+                            aliquam molestias qui quis iste corrupti
+                            quibusdam quod blanditiis vel tenetur fuga iure
+                            eum delectus labore nemo ipsam quaerat amet
+                            harum ut laudantium adipisci, ex facere.
+                            Consequatur, ducimus ratione. Alias quidem nemo
+                            autem amet molestias eaque at laudantium, neque,
+                            quibusdam quo, obcaecati vitae! Provident quo
+                            nesciunt illo cumque quibusdam libero quis
+                            voluptas sapiente adipisci dolore deserunt
+                            doloribus dolorum sequi incidunt quos nemo
+                            assumenda dolorem, corrupti a, officia quas
+                            enim? Maxime commodi recusandae provident,
+                            quaerat eligendi eveniet quos distinctio vero
+                            suscipit illo, a autem aliquid sunt? Assumenda
+                            molestiae, fugit dolore quis tenetur illum
+                            inventore earum dolor placeat ad dolorem
+                            aspernatur neque impedit maiores nobis alias. Ad
+                            laudantium enim numquam voluptatibus quam.
+                            Excepturi aliquid explicabo incidunt.
+                        </p>
+                    </div>
+                </section>
+                <section class="bg-white" id="about">
+                    <div class="w-full max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16">
+                        <h2
+                            class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate mb-8">
+                            About
+                        </h2>
+                        <p class="md:text-lg text-gray-600">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Error ex quis exercitationem
+                            earum commodi at soluta doloribus dignissimos
+                            explicabo sunt molestias totam, illum fugit qui,
+                            cupiditate distinctio obcaecati est ipsa aliquid
+                            autem dicta corporis magni? Error itaque
+                            aspernatur, earum exercitationem nihil animi
+                            accusamus nostrum magni doloribus qui odio, quae
+                            dolor eveniet praesentium nisi? Dolores
+                            cupiditate ex voluptatibus autem eius ad fugiat
+                            maiores non accusantium! Consectetur doloribus,
+                            perspiciatis sit vero provident, similique hic
+                            quibusdam, molestiae eos maxime numquam
+                            laboriosam deleniti exercitationem accusantium
+                            aliquam ullam. Aspernatur inventore cumque
+                            aliquam molestias qui quis iste corrupti
+                            quibusdam quod blanditiis vel tenetur fuga iure
+                            eum delectus labore nemo ipsam quaerat amet
+                            harum ut laudantium adipisci, ex facere.
+                            Consequatur, ducimus ratione. Alias quidem nemo
+                            autem amet molestias eaque at laudantium, neque,
+                            quibusdam quo, obcaecati vitae! Provident quo
+                            nesciunt illo cumque quibusdam libero quis
+                            voluptas sapiente adipisci dolore deserunt
+                            doloribus dolorum sequi incidunt quos nemo
+                            assumenda dolorem, corrupti a, officia quas
+                            enim? Maxime commodi recusandae provident,
+                            quaerat eligendi eveniet quos distinctio vero
+                            suscipit illo, a autem aliquid sunt? Assumenda
+                            molestiae, fugit dolore quis tenetur illum
+                            inventore earum dolor placeat ad dolorem
+                            aspernatur neque impedit maiores nobis alias. Ad
+                            laudantium enim numquam voluptatibus quam.
+                            Excepturi aliquid explicabo incidunt.
+                        </p>
+                    </div>
+                </section>
+                <section class="bg-gray-200" id="features">
+                    <div class="w-full max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16">
+                        <h2
+                            class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate mb-8">
+                            Features
+                        </h2>
+                        <p class="md:text-lg text-gray-600">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Error ex quis exercitationem
+                            earum commodi at soluta doloribus dignissimos
+                            explicabo sunt molestias totam, illum fugit qui,
+                            cupiditate distinctio obcaecati est ipsa aliquid
+                            autem dicta corporis magni? Error itaque
+                            aspernatur, earum exercitationem nihil animi
+                            accusamus nostrum magni doloribus qui odio, quae
+                            dolor eveniet praesentium nisi? Dolores
+                            cupiditate ex voluptatibus autem eius ad fugiat
+                            maiores non accusantium! Consectetur doloribus,
+                            perspiciatis sit vero provident, similique hic
+                            quibusdam, molestiae eos maxime numquam
+                            laboriosam deleniti exercitationem accusantium
+                            aliquam ullam. Aspernatur inventore cumque
+                            aliquam molestias qui quis iste corrupti
+                            quibusdam quod blanditiis vel tenetur fuga iure
+                            eum delectus labore nemo ipsam quaerat amet
+                            harum ut laudantium adipisci, ex facere.
+                            Consequatur, ducimus ratione. Alias quidem nemo
+                            autem amet molestias eaque at laudantium, neque,
+                            quibusdam quo, obcaecati vitae! Provident quo
+                            nesciunt illo cumque quibusdam libero quis
+                            voluptas sapiente adipisci dolore deserunt
+                            doloribus dolorum sequi incidunt quos nemo
+                            assumenda dolorem, corrupti a, officia quas
+                            enim? Maxime commodi recusandae provident,
+                            quaerat eligendi eveniet quos distinctio vero
+                            suscipit illo, a autem aliquid sunt? Assumenda
+                            molestiae, fugit dolore quis tenetur illum
+                            inventore earum dolor placeat ad dolorem
+                            aspernatur neque impedit maiores nobis alias. Ad
+                            laudantium enim numquam voluptatibus quam.
+                            Excepturi aliquid explicabo incidunt.
+                        </p>
+                    </div>
+                </section>
+                <section class="bg-white" id="contact">
+                    <div class="w-full max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-16">
+                        <h2
+                            class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate mb-8">
+                            Contact
+                        </h2>
+                        <p class="md:text-lg text-gray-600">
+                            Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Error ex quis exercitationem
+                            earum commodi at soluta doloribus dignissimos
+                            explicabo sunt molestias totam, illum fugit qui,
+                            cupiditate distinctio obcaecati est ipsa aliquid
+                            autem dicta corporis magni? Error itaque
+                            aspernatur, earum exercitationem nihil animi
+                            accusamus nostrum magni doloribus qui odio, quae
+                            dolor eveniet praesentium nisi? Dolores
+                            cupiditate ex voluptatibus autem eius ad fugiat
+                            maiores non accusantium! Consectetur doloribus,
+                            perspiciatis sit vero provident, similique hic
+                            quibusdam, molestiae eos maxime numquam
+                            laboriosam deleniti exercitationem accusantium
+                            aliquam ullam. Aspernatur inventore cumque
+                            aliquam molestias qui quis iste corrupti
+                            quibusdam quod blanditiis vel tenetur fuga iure
+                            eum delectus labore nemo ipsam quaerat amet
+                            harum ut laudantium adipisci, ex facere.
+                            Consequatur, ducimus ratione. Alias quidem nemo
+                            autem amet molestias eaque at laudantium, neque,
+                            quibusdam quo, obcaecati vitae! Provident quo
+                            nesciunt illo cumque quibusdam libero quis
+                            voluptas sapiente adipisci dolore deserunt
+                            doloribus dolorum sequi incidunt quos nemo
+                            assumenda dolorem, corrupti a, officia quas
+                            enim? Maxime commodi recusandae provident,
+                            quaerat eligendi eveniet quos distinctio vero
+                            suscipit illo, a autem aliquid sunt? Assumenda
+                            molestiae, fugit dolore quis tenetur illum
+                            inventore earum dolor placeat ad dolorem
+                            aspernatur neque impedit maiores nobis alias. Ad
+                            laudantium enim numquam voluptatibus quam.
+                            Excepturi aliquid explicabo incidunt.
+                        </p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@sidsbrmnn/scrollspy@1.0.4/dist/scrollspy.min.js"></script>
+    <script>
+        window.onload = function () {
+            scrollSpy('nav', {
+                sectionSelector: 'section',
+                targetSelector: 'a',
+                offset: 120,
+                activeClass: 'text-gray-100 bg-gray-900 shadow-inner',
+            });
+        };
+
+    </script>
+</body>
+
+</html>
