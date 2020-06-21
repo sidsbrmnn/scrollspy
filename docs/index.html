@@ -37,26 +37,18 @@
                     </svg>
                 </button>
             </div>
-            <nav class="hidden md:block md:flex md:flex-col text-gray-600 p-2">
-                <a href="#home"
-                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100 text-gray-100 bg-gray-900 shadow-inner">Home</a>
-                <a href="#about"
-                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">About</a>
-                <a href="#features"
-                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Features</a>
-                <a href="#contact"
-                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Contact</a>
-            </nav>
-            <nav class="md:hidden flex flex-col text-gray-600 p-2" x-show="open">
-                <a href="#home"
-                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100 text-gray-100 bg-gray-900 shadow-inner">Home</a>
-                <a href="#about"
-                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">About</a>
-                <a href="#features"
-                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Features</a>
-                <a href="#contact"
-                    class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Contact</a>
-            </nav>
+            <div x-bind:class="{ 'hidden': !open }" class="md:block">
+                <nav class="flex flex-col text-gray-600 p-2">
+                    <a href="#home"
+                        class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100 text-gray-100 bg-gray-900 shadow-inner">Home</a>
+                    <a href="#about"
+                        class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">About</a>
+                    <a href="#features"
+                        class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Features</a>
+                    <a href="#contact"
+                        class="p-2 mt-1 font-medium text-sm rounded transition duration-150 ease-in-out hover:text-gray-100">Contact</a>
+                </nav>
+            </div>
         </div>
         <div class="md:w-3/4 md:ml-auto">
             <main>
