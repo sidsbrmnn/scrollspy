@@ -9,6 +9,7 @@ class ScrollSpy {
      *  offset: number;
      *  hrefAttribute: string;
      *  activeClass: string;
+     *  onActivate: function;
      * }} options - Options
      */
     constructor(menu = '#navMain', options = {}) {
@@ -51,7 +52,7 @@ class ScrollSpy {
 
         if (menuItem) {
             this.removeCurrentActive({ ignore: menuItem });
-            this.setActive(menuItem);
+            this.setActive(menuItem, section);
         }
     }
 
@@ -104,13 +105,16 @@ class ScrollSpy {
      * @param {HTMLAnchorElement} menuItem - Menu item of current section.
      * @returns {void}
      */
-    setActive(menuItem) {
+    setActive(menuItem, section) {
         const isActive = menuItem.classList.contains(this.options.activeClass);
         if (!isActive) {
             const activeClasses = this.options.activeClass.trim().split(' ');
             activeClasses.forEach((activeClass) =>
                 menuItem.classList.add(activeClass)
             );
+            if (this.options.onActivate) {
+                this.options.onActivate(section);
+            }
         }
     }
 
