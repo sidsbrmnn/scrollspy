@@ -116,7 +116,7 @@ class ScrollSpy {
                 menuItem.classList.add(activeClass)
             );
             if (this.options.onActivate) {
-                this.options.onActivate(section);
+                this.options.onActivate(section, menuItem);
             }
         }
     }
