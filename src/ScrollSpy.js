@@ -103,6 +103,7 @@ class ScrollSpy {
      * Adds active class to the passed element.
      *
      * @param {HTMLAnchorElement} menuItem - Menu item of current section.
+     * @param {HTMLElement} section - The current section
      * @returns {void}
      */
     setActive(menuItem, section) {
