@@ -106,7 +106,9 @@ class ScrollSpy {
      * @returns {void}
      */
     setActive(menuItem, section) {
-        const isActive = menuItem.classList.contains(this.options.activeClass);
+        const isActive = menuItem.classList.value.includes(
+            this.options.activeClass
+        );
         if (!isActive) {
             const activeClasses = this.options.activeClass.trim().split(' ');
             activeClasses.forEach((activeClass) =>
