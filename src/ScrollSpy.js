@@ -9,7 +9,7 @@ class ScrollSpy {
      *  offset?: number;
      *  hrefAttribute?: string;
      *  activeClass?: string;
-     *  onActivate?: (menuItem: HTMLAnchorElement) => void;
+     *  onActivate?: (menuItem: HTMLAnchorElement, section: HTMLElement) => void;
      * }} options - Options
      */
     constructor(menu = '#navMain', options = {}) {
@@ -111,8 +111,8 @@ class ScrollSpy {
         );
         if (!isActive) {
             menuItem.classList.add(...this.options.activeClass);
-            if (this.options.onActivate) {
-                this.options.onActivate(section, menuItem);
+            if (typeof this.options.onActivate === 'function') {
+                this.options.onActivate(menuItem, section);
             }
         }
     }
