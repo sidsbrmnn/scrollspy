@@ -17,7 +17,7 @@ A simple lightweight JavaScript library without jQuery or any other dependencies
 2. Use the minified script from unpkg.com
 
     ```html
-    <script src="https://unpkg.com/@sidsbrmnn/scrollspy@1.0.4/dist/scrollspy.min.js"></script>
+    <script src="https://unpkg.com/@sidsbrmnn/scrollspy@1.x/dist/scrollspy.min.js"></script>
     ```
 
 ## Usages
