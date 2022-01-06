@@ -4,12 +4,12 @@ class ScrollSpy {
      *
      * @param {string|HTMLElement} menu - Selector to nav menu.
      * @param {{
-     *  sectionSelector: string;
-     *  targetSelector: string;
-     *  offset: number;
-     *  hrefAttribute: string;
-     *  activeClass: string;
-     *  onActivate: function;
+     *  sectionSelector?: string;
+     *  targetSelector?: string;
+     *  offset?: number;
+     *  hrefAttribute?: string;
+     *  activeClass?: string;
+     *  onActivate?: (menuItem: HTMLAnchorElement) => void;
      * }} options - Options
      */
     constructor(menu = '#navMain', options = {}) {
@@ -26,17 +26,16 @@ class ScrollSpy {
             throw new TypeError('options can only be of type object');
         }
 
-        let defaultOptions = {
-            sectionSelector: 'section',
-            targetSelector: 'a',
-            offset: 0,
-            hrefAttribute: 'href',
-            activeClass: 'active',
-        };
-
         this.menuList =
             menu instanceof HTMLElement ? menu : document.querySelector(menu);
-        this.options = Object.assign({}, defaultOptions, options);
+        this.options = {
+            sectionSelector: options.sectionSelector || 'section',
+            targetSelector: options.targetSelector || 'a',
+            offset: options.offset || 0,
+            hrefAttribute: options.hrefAttribute || 'href',
+            activeClass: options.activeClass.trim().split(' ') || ['active'],
+            onActivate: options.onActivate || null,
+        };
         this.sections = document.querySelectorAll(this.options.sectionSelector);
     }
 
@@ -107,14 +106,11 @@ class ScrollSpy {
      * @returns {void}
      */
     setActive(menuItem, section) {
-        const isActive = menuItem.classList.value.includes(
-            this.options.activeClass
+        const isActive = this.options.activeClass.every((value) =>
+            menuItem.classList.contains(value)
         );
         if (!isActive) {
-            const activeClasses = this.options.activeClass.trim().split(' ');
-            activeClasses.forEach((activeClass) =>
-                menuItem.classList.add(activeClass)
-            );
+            menuItem.classList.add(...this.options.activeClass);
             if (this.options.onActivate) {
                 this.options.onActivate(section, menuItem);
             }
@@ -138,12 +134,9 @@ class ScrollSpy {
             )}"])`
         );
 
-        menuItems.forEach((item) => {
-            const activeClasses = this.options.activeClass.trim().split(' ');
-            activeClasses.forEach((activeClass) =>
-                item.classList.remove(activeClass)
-            );
-        });
+        menuItems.forEach((item) =>
+            item.classList.remove(...this.options.activeClass)
+        );
     }
 }
 
