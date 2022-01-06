@@ -122,7 +122,7 @@ class ScrollSpy {
      * except the specified ignore element.
      *
      * @param {{
-     *  ignore: HTMLAnchorElement
+     *  ignore: HTMLAnchorElement | null
      * }} options
      * @returns {void}
      */
