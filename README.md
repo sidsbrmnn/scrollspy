@@ -1,5 +1,7 @@
 # @sidsbrmnn/scrollspy
 
+[![npm version](https://badge.fury.io/js/@sidsbrmnn%2Fscrollspy.svg)](https://badge.fury.io/js/@sidsbrmnn%2Fscrollspy)
+
 A simple lightweight JavaScript library without jQuery or any other dependencies to handle scroll spying on static webpages.
 
 ## Install
