@@ -9,7 +9,7 @@ class ScrollSpy {
      *  offset?: number;
      *  hrefAttribute?: string;
      *  activeClass?: string;
-     *  onActivate?: (menuItem: HTMLAnchorElement, section: HTMLElement) => void;
+     *  onActive?: (menuItem: HTMLAnchorElement, section: HTMLElement) => void;
      * }} options - Options
      */
     constructor(menu = '#navMain', options = {}) {
@@ -34,7 +34,7 @@ class ScrollSpy {
             offset: options.offset || 0,
             hrefAttribute: options.hrefAttribute || 'href',
             activeClass: options.activeClass.trim().split(' ') || ['active'],
-            onActivate: options.onActivate || null,
+            onActive: options.onActive || null,
         };
         this.sections = document.querySelectorAll(this.options.sectionSelector);
     }
@@ -111,8 +111,8 @@ class ScrollSpy {
         );
         if (!isActive) {
             menuItem.classList.add(...this.options.activeClass);
-            if (typeof this.options.onActivate === 'function') {
-                this.options.onActivate(menuItem, section);
+            if (typeof this.options.onActive === 'function') {
+                this.options.onActive(menuItem, section);
             }
         }
     }
