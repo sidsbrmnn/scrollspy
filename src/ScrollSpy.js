@@ -33,7 +33,7 @@ class ScrollSpy {
             targetSelector: options.targetSelector || 'a',
             offset: options.offset || 0,
             hrefAttribute: options.hrefAttribute || 'href',
-            activeClass: options.activeClass.trim().split(' ') || ['active'],
+            activeClass: options.activeClass?.trim().split(' ') || ['active'],
             onActive: options.onActive || null,
         };
         this.sections = document.querySelectorAll(this.options.sectionSelector);
