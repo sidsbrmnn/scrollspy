@@ -10,6 +10,8 @@ class ScrollSpy {
      *  hrefAttribute?: string;
      *  activeClass?: string;
      *  onActive?: (menuItem: HTMLAnchorElement, section: HTMLElement) => void;
+     *  useLast?: boolean;
+     *  useLastMargin?: number;
      * }} options - Options
      */
     constructor(menu = '#navMain', options = {}) {
@@ -35,6 +37,8 @@ class ScrollSpy {
             hrefAttribute: options.hrefAttribute || 'href',
             activeClass: options.activeClass?.trim().split(' ') || ['active'],
             onActive: options.onActive || null,
+            useLast: options.useLast || false,
+            useLastMargin: options.useLastMargin || 0,
         };
         this.sections = document.querySelectorAll(this.options.sectionSelector);
     }
@@ -56,12 +60,26 @@ class ScrollSpy {
     }
 
     /**
+     * Returns if page scrolled to bottom.
+     *
+     * @param {number} margin - Margin for bottom check
+     * @returns {boolean}
+     */
+    isAtBottom(margin = 0) {
+        return (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - margin);
+    }
+
+    /**
      * Returns the section where the current
      * scroll position is.
      *
      * @returns {HTMLElement}
      */
     getCurrentSection() {
+        if (this.options.useLast && this.isAtBottom(this.options.useLastMargin)) {
+            return this.sections[this.sections.length - 1];
+        }
+
         for (let i = 0; i < this.sections.length; i++) {
             /**
              * @type {HTMLElement}

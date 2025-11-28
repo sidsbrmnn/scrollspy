@@ -56,6 +56,8 @@ If you are giving it a try, make sure that you:
 | `hrefAttribute`    | string   | `href`        | The menu item's attribute name which contains section ID                                                         |
 | `activeClass`      | string   | `active`      | Active class name will be added into `targetSelector`                                                            |
 | `onActive`         | function | null          | A callback method that's called with the current menuItem and section `onActive: function(menuItem, section) {}` |
+| `useLast`          | function | false         | Use the last section when scrolled to the bottom of the page                                                     |
+| `useLastMargin`    | function | 0             | Margin tollerance, in pixels, that is considered scrolled to the bottom of the page                              |
 
 ### ES6
 
