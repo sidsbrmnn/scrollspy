@@ -91,6 +91,10 @@ scrollSpy('#navMain', options)
 </script>
 ```
 
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTION.md) for details on how to get started.
+
 ## Licence
 
 [MIT](LICENSE)
